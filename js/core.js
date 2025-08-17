@@ -12,7 +12,6 @@
       storageBucket: "trinhhg-1f8f3.firebasestorage.app",
       messagingSenderId: "63432174844",
       appId: "1:63432174844:web:57f18e049b4cf5860e7b79"
-      measurementId: "G-LNZQTM2JTD"
     };
 
     // Khởi tạo Firebase
