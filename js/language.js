@@ -3,16 +3,31 @@
     app.updateLanguage = function(lang){
       try {
         app.currentLang = lang;
-        document.documentElement.lang = lang;
-        // Đoạn này giữ nguyên toàn bộ logic cập nhật text như trong index.js gốc
-        // Bao gồm thay đổi placeholder, button text, v.v.
-        // Vì dài nên bạn copy nguyên hàm updateLanguage trong file gốc vào đây
-        // và thay tất cả `translations` thành `app.translations`, `currentLang` thành `app.currentLang`
-        // và `matchCaseEnabled` thành `app.matchCaseEnabled`
+        const t = app.translations[lang];
+
+        // Update text UI
+        document.getElementById("app-title").innerText = "Tiện Ích Của Trịnh Hg";
+        document.getElementById("settings-title").innerText = "Cài đặt tìm kiếm và thay thế";
+        document.getElementById("replace-title").innerText = "Thay thế Dấu câu";
+        document.getElementById("split-title").innerText = "Chia Chương";
+
+        // Buttons
+        document.getElementById("replace-button").innerText = "Thay thế";
+        document.getElementById("copy-button").innerText = "Sao chép";
+        document.getElementById("copy-button1").innerText = "Sao chép 1";
+        document.getElementById("copy-button2").innerText = "Sao chép 2";
+        if (document.getElementById("copy-button3")) {
+          document.getElementById("copy-button3").innerText = "Sao chép 3";
+        }
+        if (document.getElementById("copy-button4")) {
+          document.getElementById("copy-button4").innerText = "Sao chép 4";
+        }
+
       } catch(err) {
         console.error("Lỗi trong updateLanguage:", err);
       }
     };
+
   } catch(err) {
     console.error("Lỗi trong language.js:", err);
   }
